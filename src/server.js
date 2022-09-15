@@ -1,5 +1,6 @@
 require('dotenv/config'); // import dotenv
 const Hapi = require('@hapi/hapi');
+const hapiAuthJwt = require('@hapi/jwt');
 
 // notes
 const notes = require('./api/notes');
@@ -16,7 +17,6 @@ const AuthenticationsService = require('./services/postgres/AuthenticationsServi
 const authentications = require('./api/authentications');
 const TokenManager = require('./tokenize/TokenManager');
 const AuthenticationsValidator = require('./validator/authentications');
-const hapiAuthJwt = require('@hapi/jwt');
 
 const init = async () => {
   const notesService = new NotesService();
